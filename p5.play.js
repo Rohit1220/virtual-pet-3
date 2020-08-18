@@ -3,6 +3,7 @@ p5.play
 by Paolo Pedercini/molleindustria, 2015
 http://molleindustria.org/
 */
+
 (function(root, factory) {
 if (typeof define === 'function' && define.amd)
 define('p5.play', ['@code-dot-org/p5'], function(p5) { (factory(p5)); });
@@ -4088,8 +4089,8 @@ p5.prototype.createEdgeSprites = function() {
 
   var edgeThickness = 100;
 
-  var width = this.width;
-  var height = this.height;
+  var width = this._curElement.elt.offsetWidth;
+  var height = this._curElement.elt.offsetHeight;
 
   this.leftEdge = this.createSprite(-edgeThickness / 2, height / 2, edgeThickness, height);
   this.rightEdge = this.createSprite(width + (edgeThickness / 2), height / 2, edgeThickness, height);
